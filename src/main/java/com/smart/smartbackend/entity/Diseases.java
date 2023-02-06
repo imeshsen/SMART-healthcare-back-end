@@ -9,6 +9,6 @@ import lombok.NoArgsConstructor;
 @Data
 public class Diseases {
     private String type;
-    private String disease;
+    private String name;
     private String specialist;
 }

@@ -15,4 +15,8 @@ public class DiseaseController {
     @Autowired
     public DiseaseService diseaseService;
 
+    @PostMapping("/save")
+    public String saveDisease(@RequestBody Diseases diseases) throws ExecutionException, InterruptedException {
+        return diseaseService.saveDisease(diseases);
+    }
 }

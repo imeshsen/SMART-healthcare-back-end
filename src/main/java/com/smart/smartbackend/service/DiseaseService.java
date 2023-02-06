@@ -15,4 +15,12 @@ import java.util.concurrent.ExecutionException;
 @Service
 public class DiseaseService {
 
+
+    private static final String COLLECTION_NAME = "diseases";
+
+    public String saveDisease(Diseases diseases) throws ExecutionException, InterruptedException {
+        Firestore dbFirestore = FirestoreClient.getFirestore();
+        ApiFuture<WriteResult> collectionApiFuture= dbFirestore.collection(COLLECTION_NAME).document(diseases.getName()).set(diseases);
+        return collectionApiFuture.get().getUpdateTime().toString();
+    }
 }
