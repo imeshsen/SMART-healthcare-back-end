@@ -1,7 +1,6 @@
 package com.smart.smartbackend.controller;
 
 import com.smart.smartbackend.entity.Register;
-import com.smart.smartbackend.service.DiseaseService;
 import com.smart.smartbackend.service.PatientService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -17,7 +16,7 @@ public class Controller {
     public PatientService patientService;
 
     @GetMapping("/print")
-    public String printuser(){
+    public String printuser() {
         return "imesh";
     }
 

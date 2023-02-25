@@ -25,4 +25,9 @@ public class DiseaseController {
         return diseaseService.searchDiseaseName(name);
     }
 
+    @GetMapping("/findall")
+    public List<Diseases> findAllDiseases() throws ExecutionException, InterruptedException {
+        return diseaseService.findAll();
+    }
+
 }
