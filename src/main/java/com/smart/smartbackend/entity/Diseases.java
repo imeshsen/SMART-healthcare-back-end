@@ -7,6 +7,7 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 @Data
+
 public class Diseases {
     private String type;
     private String name;

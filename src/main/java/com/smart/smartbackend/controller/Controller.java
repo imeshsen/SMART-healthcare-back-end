@@ -26,9 +26,9 @@ public class Controller {
         return patientService.savePatient(register);
     }
 
-    @GetMapping("/search/{name}")
-    public Register searchPatient(@PathVariable String name) throws ExecutionException, InterruptedException {
-        return patientService.searchPatient(name);
+    @GetMapping("/search/{nic}")
+    public Register searchPatient(@PathVariable String nic) throws ExecutionException, InterruptedException {
+        return patientService.searchPatient(nic);
     }
 
     @GetMapping("/patients/")

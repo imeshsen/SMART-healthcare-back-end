@@ -24,9 +24,9 @@ public class PatientService {
         return collectionApiFuture.get().getUpdateTime().toString();
     }
 
-    public Register searchPatient(String name) throws ExecutionException, InterruptedException {
+    public Register searchPatient(String nic) throws ExecutionException, InterruptedException {
         Firestore dbFirestore = FirestoreClient.getFirestore();
-        DocumentReference documentReference= dbFirestore.collection(COLLECTION_NAME).document(name);
+        DocumentReference documentReference= dbFirestore.collection(COLLECTION_NAME).document(nic);
         ApiFuture<DocumentSnapshot> future = documentReference.get();
         DocumentSnapshot document = future.get();
 

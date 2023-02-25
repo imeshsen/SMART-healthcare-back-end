@@ -23,4 +23,19 @@ public class DiseaseService {
         ApiFuture<WriteResult> collectionApiFuture= dbFirestore.collection(COLLECTION_NAME).document(diseases.getName()).set(diseases);
         return collectionApiFuture.get().getUpdateTime().toString();
     }
+
+    public Diseases searchDiseaseName(String name) throws ExecutionException, InterruptedException {
+        Firestore dbFirestore = FirestoreClient.getFirestore();
+        DocumentReference documentReference= dbFirestore.collection(COLLECTION_NAME).document(name);
+        ApiFuture<DocumentSnapshot> future = documentReference.get();
+        DocumentSnapshot document = future.get();
+
+        Diseases diseases = null;
+        if (document.exists()){
+            diseases = document.toObject(Diseases.class);
+            return diseases;
+        }else{
+            return null;
+        }
+    }
 }

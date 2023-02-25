@@ -19,4 +19,10 @@ public class DiseaseController {
     public String saveDisease(@RequestBody Diseases diseases) throws ExecutionException, InterruptedException {
         return diseaseService.saveDisease(diseases);
     }
+
+    @GetMapping("/find/{name}")
+    public Diseases findDiseaseName(@PathVariable String name) throws ExecutionException, InterruptedException {
+        return diseaseService.searchDiseaseName(name);
+    }
+
 }
