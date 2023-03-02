@@ -20,32 +20,32 @@ public class SpecialistController {
         return  specialistService.save(specialist);
     }
 
-    @GetMapping("/andrologists")
+    @GetMapping("/andrologist")
     public List<Specialist> getAndrologists() throws ExecutionException, InterruptedException {
         return specialistService.getAllAndrologists();
     }
 
-    @GetMapping("/cardiologists")
+    @GetMapping("/cardiologist")
     public List<Specialist> getCardiologists() throws ExecutionException, InterruptedException {
         return specialistService.getAllCardiologists();
     }
 
-    @GetMapping("/gastroenteologists")
+    @GetMapping("/gastroenteologist")
     public List<Specialist> getGastroenteologists() throws ExecutionException, InterruptedException {
         return specialistService.getAllGastroenteologists();
     }
 
-    @GetMapping("/gynocologists")
+    @GetMapping("/gynocologist")
     public List<Specialist> getGynocologists() throws ExecutionException, InterruptedException {
         return specialistService.getAllGynocologists();
     }
 
-    @GetMapping("/pulmonologists")
+    @GetMapping("/pulmonologist")
     public List<Specialist> getPulmonologists() throws ExecutionException, InterruptedException {
         return specialistService.getAllPulmonologists();
     }
 
-    @GetMapping("/urologists")
+    @GetMapping("/urologist")
     public List<Specialist> getUrologists() throws ExecutionException, InterruptedException {
         return specialistService.getAllUrologists();
     }
