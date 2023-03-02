@@ -34,4 +34,5 @@ public class Controller {
     public List<Register> getAllPatients() throws ExecutionException, InterruptedException {
         return patientService.getAllPatients();
     }
+
 }

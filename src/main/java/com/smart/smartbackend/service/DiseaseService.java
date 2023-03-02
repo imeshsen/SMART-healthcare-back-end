@@ -1,13 +1,9 @@
 package com.smart.smartbackend.service;
 
 import com.google.api.core.ApiFuture;
-import com.google.cloud.firestore.DocumentReference;
-import com.google.cloud.firestore.DocumentSnapshot;
-import com.google.cloud.firestore.Firestore;
-import com.google.cloud.firestore.WriteResult;
+import com.google.cloud.firestore.*;
 import com.google.firebase.cloud.FirestoreClient;
 import com.smart.smartbackend.entity.Diseases;
-import com.smart.smartbackend.entity.Register;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
@@ -20,6 +16,7 @@ public class DiseaseService {
 
 
     private static final String COLLECTION_NAME = "diseases";
+    private Object RetrieveDataSnippets;
 
     public String saveDisease(Diseases diseases) throws ExecutionException, InterruptedException {
         Firestore dbFirestore = FirestoreClient.getFirestore();
